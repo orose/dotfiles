@@ -1,4 +1,9 @@
-# vimconfig
+# Dotfiles
 
-My config for vim
+How to install
+
+    $ git clone https://github.com/orose/dotfiles.git ~/git/dotfiles
+    $ cd ~/git/dotfiles
+    $ git submodule init
+    $ git submodule update
 
