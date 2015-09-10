@@ -1,3 +1,9 @@
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/MatchTag"]
+	path = vim/bundle/MatchTag
+	url = https://github.com/gregsexton/MatchTag.git
+[submodule "vim/bundle/closetag"]
+	path = vim/bundle/closetag
+	url = git://github.com/docunext/closetag.vim.git
