@@ -27,6 +27,8 @@ set scrolloff=3
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+map <c-t> :tabnew<cr>
+
 " set list
 set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\
 
