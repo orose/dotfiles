@@ -3,6 +3,8 @@ syntax on
 filetype plugin indent on
 
 let mapleader = ','
+nmap <leader>ne :NERDTree<cr>
+nmap <leader>nf :NERDTreeFind<cr>
 
 set laststatus=2
 set ignorecase
