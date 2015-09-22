@@ -11,6 +11,7 @@ set visualbell
 set number
 set foldmethod=manual
 set modeline
+set relativenumber
 set directory=$HOME/.vim/swap//
 
 
