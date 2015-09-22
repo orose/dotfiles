@@ -12,7 +12,8 @@ set smartcase
 set tabstop=2
 set shiftwidth=2
 set visualbell
-set background=dark
+set background=light
+colorscheme solarized
 set number
 set expandtab
 set smartindent
