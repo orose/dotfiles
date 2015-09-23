@@ -17,7 +17,8 @@ set directory=$HOME/.vim/swap//
 
 " Colorscheme
 " ===========
-set background=light
+set background=dark
+let g:solarized_termcolors=256
 colorscheme solarized
 
 
@@ -42,9 +43,14 @@ set smartcase
 
 " Ctrl+P
 " ======
-let g:ctrlp_custom_ignore = 'node_modules\|bower_components'
+let g:ctrlp_custom_ignore = 'node_modules\|bower_components\|vendor'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+
+" Auto-Pairs
+" ==========
+let g:AutoPairsShortcutFastWrap = ''
 
 
 " Minimal number of screen lines to keep above and below the cursor
