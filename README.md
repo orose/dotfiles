@@ -7,3 +7,7 @@ How to install
     $ git submodule init
     $ git submodule update
 
+Upgrading all bundled plugins
+
+    $ git submodule foreach git pull origin master
+
