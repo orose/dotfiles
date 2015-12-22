@@ -17,3 +17,6 @@ fi
 if [ -f ~/.bash_prompt ]; then
   . ~/.bash_prompt
 fi
+
+[[ -n "$DISPLAY" && "$TERM" = "xterm"  ]] && export TERM=xterm-256color
+
