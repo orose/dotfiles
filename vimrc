@@ -25,9 +25,9 @@ colorscheme Twilight
 
 " Real programmers don't use TABs but spaces
 " ==========================================
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set expandtab
 set autoindent
 set smartindent
