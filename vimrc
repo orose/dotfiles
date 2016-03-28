@@ -17,10 +17,11 @@ set directory=$HOME/.vim/swap//
 
 " Colorscheme
 " ===========
-set background=dark
+set background=light
 let g:solarized_termcolors=256
 " colorscheme solarized
-colorscheme Twilight
+" colorscheme Twilight
+colorscheme pencil
 
 
 " Real programmers don't use TABs but spaces
