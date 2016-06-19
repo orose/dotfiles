@@ -45,7 +45,7 @@ set smartcase
 
 " Ctrl+P
 " ======
-let g:ctrlp_custom_ignore = 'node_modules\|bower_components\|vendor'
+let g:ctrlp_custom_ignore = 'node_modules\|bower_components\|vendor\|web/html\|web/css\|web/js'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
@@ -53,6 +53,15 @@ let g:ctrlp_cmd = 'CtrlP'
 " Auto-Pairs
 " ==========
 let g:AutoPairsShortcutFastWrap = ''
+
+
+" Airline
+" =======
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 
 " Minimal number of screen lines to keep above and below the cursor
@@ -71,6 +80,26 @@ set guitablabel=%N/\ %t\ %M
 
 " reload file when entering buffer or gained focus
 au FocusGained,BufEnter * :silent! !
+
+
+" Buffers
+" ====
+" This allows buffers to be hidden if you've modified a buffer.
+" This is almost a must if you wish to use buffers in this way.
+set hidden
+
+" Move to the next buffer
+nmap <leader>l :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>h :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>bq :bp <BAR> bd #<CR>
+
+" Show all open buffers and their status
+nmap <leader>bl :ls<CR>
 
 if has("autocmd")
   filetype indent on
