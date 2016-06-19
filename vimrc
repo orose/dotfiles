@@ -13,6 +13,9 @@ set foldmethod=manual
 set modeline
 set relativenumber
 set directory=$HOME/.vim/swap//
+" Minimal number of screen lines to keep above and below the cursor
+set scrolloff=3
+
 
 
 " Colorscheme
@@ -63,9 +66,6 @@ let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 
-
-" Minimal number of screen lines to keep above and below the cursor
-set scrolloff=3
 
 map <c-t> :tabnew<cr>
 
