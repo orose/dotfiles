@@ -1,14 +1,14 @@
 [user]
-	name = Øystein Rose
-	email = oystein.rose@gmail.com
+    name = Øystein Rose
+    email = oystein.rose@gmail.com
 [github]
-  user = orose
+    user = orose
 [core]
-	excludesfile = ~/.gitignore_global
-  pager = less -FXRS -x2
-	editor = vim
+    excludesfile = ~/.gitignore_global
+    pager = less -FXRS -x2
+    editor = vim
 [push]
-	default = matching
+    default = matching
 [alias]
 # list all aliases
     la = "!git config -l | grep alias | cut -c 7-"
