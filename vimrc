@@ -20,11 +20,11 @@ set scrolloff=3
 
 " Colorscheme
 " ===========
-set background=light
+set background=dark
 let g:solarized_termcolors=256
 " colorscheme solarized
-" colorscheme Twilight
-colorscheme pencil
+colorscheme Twilight
+" colorscheme pencil
 
 
 " Real programmers don't use TABs but spaces
@@ -66,8 +66,11 @@ let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
 
-
+" Open new tab
 map <c-t> :tabnew<cr>
+
+" Strip all trailing whitespace in current file
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " set list
 set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\
