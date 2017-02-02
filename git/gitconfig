@@ -4,7 +4,7 @@
 [github]
     user = orose
 [core]
-    excludesfile = ~/.gitignore_global
+	excludesfile = /Users/orose/.gitignore_global
     pager = less -FXRS -x2
     editor = vim
 [push]
@@ -89,3 +89,9 @@
     untracked = red
 [color "sh"]
     branch = yellow
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
