@@ -104,6 +104,9 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
 
+" Toggle nerdtree
+nnoremap <F4> :NERDTreeToggle<CR>
+
 if has("autocmd")
   filetype indent on
 endif
