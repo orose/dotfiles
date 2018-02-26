@@ -20,11 +20,11 @@ set scrolloff=3
 
 " Colorscheme
 " ===========
-set background=light
+set background=dark
 let g:solarized_termcolors=256
 " colorscheme solarized
-" colorscheme Twilight
-colorscheme PaperColor
+colorscheme Twilight
+" colorscheme PaperColor
 " colorscheme pencil
 
 
