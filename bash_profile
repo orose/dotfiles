@@ -18,5 +18,10 @@ if [ -f ~/.bash_prompt ]; then
   . ~/.bash_prompt
 fi
 
+if [ "$(expr substr $(uname -s) 1 5)" == "Linux"  ]; then
+  export TERMINAL=rxvt-unicode
+fi
+
 [[ -n "$DISPLAY" && "$TERM" = "xterm"  ]] && export TERM=xterm-256color
 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
