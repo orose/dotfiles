@@ -45,7 +45,7 @@ bindsym $mod+d exec dmenu_run
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-bindsym $mod+l focus up
+# bindsym $mod+l focus up
 bindsym $mod+oslash focus right
 
 # alternatively, you can use the cursor keys:
@@ -154,3 +154,9 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+# Lock screen
+bindsym $mod+l exec ~/.config/i3/scripts/screen-lock.sh
+exec xautolock -time 5 -locker ~/.config/i3/scripts/screen-lock.sh &
+
+exec_always ~/.config/i3/scripts/dual-monitor.sh
