@@ -34,3 +34,5 @@
 ! white
 *.color7:       #a7a7a7
 *.color15:      #ffffff
+
+*font: -xos4-terminus-medium-*-normal-*-16-*-72-72-c-80-iso8859-1
