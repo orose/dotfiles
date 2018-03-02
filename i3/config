@@ -166,4 +166,8 @@ bar {
 bindsym $mod+l exec ~/.config/i3/scripts/screen-lock.sh
 exec xautolock -time 5 -locker ~/.config/i3/scripts/screen-lock.sh &
 
+# Volume control
+bindsym $mod+plus exec "amixer -q set Master 2dB+ unmute"
+bindsym $mod+minus exec "amixer -q set Master 2dB- unmute"
+
 exec_always ~/.config/i3/scripts/dual-monitor.sh
