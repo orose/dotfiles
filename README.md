@@ -3,11 +3,12 @@
 How to install
 
     $ git clone https://github.com/orose/dotfiles.git ~/git/dotfiles
-    $ cd ~/git/dotfiles
-    $ git submodule init
-    $ git submodule update
+    $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    $ cd && ln -s git/dotfiles/vimrc .vimrc
 
-Upgrading all bundled plugins
+Open vim and run the following command to install all plugins
 
-    $ git submodule foreach git pull origin master
+    :PluginInstall
+
+Restart vim and you should be up and running!
 
