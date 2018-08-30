@@ -35,6 +35,10 @@ nmap <leader>h :bprevious<CR>
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
 
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>bq :bp <BAR> bd #<CR>
+
 nmap <leader>ne :NERDTree<cr>
 nmap <leader>nf :NERDTreeFind<cr>
 
