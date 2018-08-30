@@ -3,10 +3,12 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
 Plugin 'ervandew/supertab'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'jiangmiao/auto-pairs'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter.git'
@@ -45,23 +47,38 @@ set incsearch
 set ignorecase
 set smartcase
 
+" ===========
+" Colorscheme
+" ===========
+set background=dark
+colorscheme Twilight
+
+
+" ================================================================================
+" Plugins
+" ================================================================================
+
+
+" =======
+" Airline
+" =======
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
+
+" ==========
+" Auto-Pairs
+" ==========
+let g:AutoPairsShortcutFastWrap = ''"
+
+
+" ======
 " Ctrl+P
 " ======
 let g:ctrlp_custom_ignore = 'node_modules\|bower_components\|vendor\|web/html\|web/css\|web/js'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-" Airline
-" =======
-" Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
-
-" Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
-
-
-" Colorscheme
-" ===========
-set background=dark
-colorscheme Twilight
 
