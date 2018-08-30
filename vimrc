@@ -13,6 +13,9 @@ Plugin 'airblade/vim-gitgutter.git'
 
 Plugin 'vim-airline/vim-airline'
 
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
 call vundle#end()
 filetype plugin indent on
 
