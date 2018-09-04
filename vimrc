@@ -25,6 +25,7 @@ syntax on
 set number
 set relativenumber
 set hidden
+set directory=$HOME/.vim/swap//
 
 let mapleader = ','
 
