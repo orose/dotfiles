@@ -93,4 +93,5 @@ let g:ctrlp_cmd = 'CtrlP'
 " Prettier
 " ========
 let g:prettier#autoformat = 0
+let g:prettier#config#bracket_spacing = 'true'
 autocmd BufWritePre *.js,*.css,*.scss,*.less,*.json,*.md,*.vue Prettier
