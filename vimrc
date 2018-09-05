@@ -18,6 +18,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
+Plugin 'prettier/vim-prettier'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -87,3 +89,8 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 
+" ========
+" Prettier
+" ========
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.css,*.scss,*.less,*.json,*.md,*.vue Prettier
