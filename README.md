@@ -6,12 +6,7 @@ How to install
     $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     $ cd && ln -s git/dotfiles/vimrc .vimrc
     $ cd && ln -s git/dotfiles/vim .vim
-
-Open vim and run the following command to install all plugins
-
-    :PluginInstall
-
-Quit vim
+    $ vim +PluginInstall +qall
 
 Install Prettier (requires git and yarn)
 $ cd ~/git/dotfiles/vim/bundle/vim-prettier && yarn install
