@@ -9,6 +9,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'alvan/vim-closetag'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter.git'
