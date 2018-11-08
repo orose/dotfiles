@@ -21,6 +21,8 @@ Plugin 'mxw/vim-jsx'
 
 Plugin 'prettier/vim-prettier'
 
+Plugin 'micha/vim-colors-solarized'
+
 call vundle#end()
 filetype plugin indent on
 
