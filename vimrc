@@ -14,7 +14,7 @@ Plugin 'alvan/vim-closetag'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter.git'
 
-Plugin 'vim-airline/vim-airline'
+Plugin 'itchyny/lightline.vim'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
@@ -48,6 +48,8 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 nmap <leader>ne :NERDTree<cr>
 nmap <leader>nf :NERDTreeFind<cr>
 
+nnoremap <leader>. :CtrlPTag<cr>
+
 set expandtab
 set shiftwidth=2
 set softtabstop=2
@@ -62,6 +64,7 @@ set smartcase
 " ===========
 set background=dark
 colorscheme Twilight
+" colorscheme solarized
 
 
 " ================================================================================
@@ -69,13 +72,11 @@ colorscheme Twilight
 " ================================================================================
 
 
-" =======
-" Airline
-" =======
-" Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
-" Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
+" =========
+" Lightline
+" =========
+set noshowmode
+set laststatus=2
 
 
 " ==========
@@ -99,4 +100,4 @@ let g:prettier#autoformat = 0
 let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#single_quote = 'false'
 let g:prettier#config#trailing_comma = 'none'
-autocmd BufWritePre *.js,*.css,*.scss,*.less,*.json,*.md,*.vue Prettier
+autocmd BufWritePre *.js,*.css,*.scss,*.less,*.md,*.vue Prettier
