@@ -17,6 +17,7 @@ Plugin 'itchyny/lightline.vim'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'posva/vim-vue'
 
 Plugin 'prettier/vim-prettier'
 
