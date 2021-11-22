@@ -88,7 +88,7 @@ let g:AutoPairsShortcutFastWrap = ''"
 " ======
 " Ctrl+P
 " ======
-let g:ctrlp_custom_ignore = 'node_modules\|bower_components\|vendor\|web/html\|web/css\|web/js'
+let g:ctrlp_custom_ignore = 'target\|node_modules\|vendor\|web/html\|web/css\|web/js'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
