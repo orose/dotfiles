@@ -23,3 +23,8 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux"  ]; then
 fi
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files -g "!{node_modules/*,.git/*}"'
+  export FZF_DEFAULT_OPTS='-m --height 50% --border'
+fi
