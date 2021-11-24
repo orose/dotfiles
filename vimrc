@@ -63,7 +63,8 @@ set smartcase
 " Colorscheme
 " ===========
 set background=dark
-colorscheme Twilight
+colorscheme everforest
+" colorscheme Twilight
 " colorscheme solarized
 
 
