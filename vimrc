@@ -5,7 +5,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'ervandew/supertab'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jiangmiao/auto-pairs'
@@ -22,6 +21,9 @@ Plugin 'mxw/vim-jsx'
 Plugin 'prettier/vim-prettier'
 
 Plugin 'micha/vim-colors-solarized'
+
+Plugin 'junegunn/fzf.vim'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 call vundle#end()
 filetype plugin indent on
@@ -47,8 +49,6 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 
 nmap <leader>ne :NERDTree<cr>
 nmap <leader>nf :NERDTreeFind<cr>
-
-nnoremap <leader>. :CtrlPTag<cr>
 
 set expandtab
 set shiftwidth=2
@@ -86,11 +86,11 @@ let g:AutoPairsShortcutFastWrap = ''"
 
 
 " ======
-" Ctrl+P
+" Fuzzy File Finder (fzf)
 " ======
-let g:ctrlp_custom_ignore = 'target\|node_modules\|vendor\|web/html\|web/css\|web/js'
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+nnoremap <leader>o :Files<CR>
+nnoremap <leader>f :Rg<CR>
+nnoremap <leader>g :Commits<CR>
 
 
 " ========

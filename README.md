@@ -12,3 +12,5 @@ Install Prettier (requires git and yarn)
 $ cd ~/git/dotfiles/vim/bundle/vim-prettier && yarn install
 
 You should now be up and running!
+
+In case vim is not working properly with fzf, checkout this guide: https://dev.to/iggredible/how-to-search-faster-in-vim-with-fzf-vim-36ko
