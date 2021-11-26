@@ -87,11 +87,15 @@ set laststatus=2
 let g:AutoPairsShortcutFastWrap = ''"
 
 
-" ======
+" =======================
 " Fuzzy File Finder (fzf)
-" ======
+" =======================
+
+" Search for files
 nnoremap <leader>o :Files<CR>
+" Search/grep inside files
 nnoremap <leader>f :Rg<CR>
+" Search Git Commits
 nnoremap <leader>g :Commits<CR>
 
 
