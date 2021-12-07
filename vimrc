@@ -37,7 +37,7 @@ set relativenumber
 set hidden
 set directory=$HOME/.vim/swap//
 
-let mapleader = ','
+let mapleader = ' '
 
 " Move to the next buffer
 nmap <leader>l :bnext<CR>
@@ -99,6 +99,8 @@ nnoremap <leader>o :Files<CR>
 nnoremap <leader>f :Rg<CR>
 " Search Git Commits
 nnoremap <leader>g :Commits<CR>
+" Buffers
+nnoremap <leader>b :Buffers<CR>
 
 
 " ========
