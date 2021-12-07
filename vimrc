@@ -26,6 +26,8 @@ Plugin 'micha/vim-colors-solarized'
 Plugin 'junegunn/fzf.vim'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
+Plugin 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+
 call vundle#end()
 filetype plugin indent on
 
