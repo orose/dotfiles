@@ -112,3 +112,15 @@ let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#single_quote = 'false'
 let g:prettier#config#trailing_comma = 'none'
 autocmd BufWritePre *.js,*.css,*.scss,*.less,*.md,*.vue Prettier
+
+" ===========================
+" CoC - Conquer of Completion
+" ===========================
+" let g:coc_node_path = '/Users/k37597/.nvm/versions/node/v14.18.2/bin/node'
+let g:coc_global_extensions = ['coc-css', 'coc-json', 'coc-tsserver', 'coc-html']
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
