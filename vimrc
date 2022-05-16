@@ -128,7 +128,7 @@ autocmd BufWritePre *.js,*.css,*.scss,*.less,*.md,*.vue Prettier
 " CoC - Conquer of Completion
 " ===========================
 " let g:coc_node_path = '/Users/k37597/.nvm/versions/node/v14.18.2/bin/node'
-let g:coc_global_extensions = ['coc-css', 'coc-json', 'coc-tsserver', 'coc-html']
+let g:coc_global_extensions = ['coc-css', 'coc-json', 'coc-tsserver', 'coc-html', 'coc-git']
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
