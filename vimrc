@@ -63,6 +63,7 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+set backspace=indent,eol,start
 
 " ===========
 " Colorscheme
