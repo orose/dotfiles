@@ -57,6 +57,8 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
+set scrolloff=5
+
 set hlsearch
 set incsearch
 set ignorecase
@@ -66,10 +68,18 @@ set smartcase
 " Colorscheme
 " ===========
 set background=dark
-colorscheme gruvbox
-" colorscheme Twilight
+" colorscheme gruvbox
+colorscheme Twilight
 " colorscheme everforest
 " colorscheme solarized
+"
+" =======
+" Folding
+" =======
+set foldmethod=syntax "syntax highlighting items specify folds  
+" set foldcolumn=1 "defines 1 col at window left, to indicate folding  
+let javaScript_fold=1 "activate folding by JS syntax  
+set foldlevelstart=99 "start file with all folds opened
 
 
 " ================================================================================
@@ -124,4 +134,4 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-nmap <silent> rn <Plug>(coc-rename)
+nmap <leader>rn <Plug>(coc-rename)
