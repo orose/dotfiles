@@ -10,6 +10,11 @@ if [ -f ~/.bash_prompt ]; then
   . ~/.bash_prompt
 fi
 
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+
 [[ -n "$DISPLAY" && "$TERM" = "xterm"  ]] && export TERM=xterm-256color
 
 if [ "$(uname)" == "Darwin"  ]; then
