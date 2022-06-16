@@ -58,6 +58,7 @@ set shiftwidth=2
 set softtabstop=2
 
 set scrolloff=5
+set splitbelow
 
 set hlsearch
 set incsearch
