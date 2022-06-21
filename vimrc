@@ -35,9 +35,25 @@ syntax on
 set number
 set relativenumber
 set hidden
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set scrolloff=5
+set splitbelow
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set backspace=indent,eol,start
+set mouse=a
+set ttymouse=xterm2
 set directory=$HOME/.vim/swap//
-
 let mapleader = ' '
+
+
+" ==================
+" Navigating buffers
+" ==================
 
 " Move to the next buffer
 nmap <leader>l :bnext<CR>
@@ -45,6 +61,8 @@ nmap <leader>l :bnext<CR>
 nmap <leader>h :bprevious<CR>
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
+" Move to latest buffer
+nnoremap <leader>p <C-^>
 
 " Close the current buffer and move to the previous one
 " This replicates the idea of closing a tab
@@ -53,20 +71,6 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 nmap <leader>ne :NERDTree<cr>
 nmap <leader>nf :NERDTreeFind<cr>
 
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-
-set scrolloff=5
-set splitbelow
-
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set backspace=indent,eol,start
-set mouse=a
-set ttymouse=xterm2
 
 " ===========
 " Colorscheme
@@ -137,22 +141,3 @@ let g:prettier#config#single_quote = 'false'
 let g:prettier#config#trailing_comma = 'none'
 autocmd BufWritePre *.js,*.css,*.scss,*.less,*.md,*.vue Prettier
 
-" ===========================
-" CoC - Conquer of Completion
-" ===========================
-" let g:coc_node_path = '/Users/k37597/.nvm/versions/node/v14.18.2/bin/node'
-let g:coc_global_extensions = ['coc-css', 'coc-json', 'coc-tsserver', 'coc-html', 'coc-git']
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <leader>rn <Plug>(coc-rename)
-
-" Navigate to next/prev error spotted by CoC
-nmap <silent> <Leader>j <Plug>(coc-diagnostic-prev)
-nmap <silent> <Leader>k <Plug>(coc-diagnostic-next)
-
-" Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
