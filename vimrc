@@ -101,7 +101,7 @@ set foldlevelstart=99 "start file with all folds opened
 set noshowmode
 set laststatus=2
 let g:lightline = {
-  \ 'colorscheme': 'everforest',
+  \ 'colorscheme': 'gruvbox',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
