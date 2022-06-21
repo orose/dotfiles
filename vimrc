@@ -72,8 +72,8 @@ set ttymouse=xterm2
 " Colorscheme
 " ===========
 set background=dark
-" colorscheme gruvbox
-colorscheme Twilight
+colorscheme gruvbox
+" colorscheme Twilight
 " colorscheme everforest
 " colorscheme solarized
 "
