@@ -18,6 +18,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'posva/vim-vue'
 
+Plugin 'vim-test/vim-test'
 Plugin 'prettier/vim-prettier'
 
 Plugin 'micha/vim-colors-solarized'
@@ -139,4 +140,14 @@ let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#single_quote = 'false'
 let g:prettier#config#trailing_comma = 'none'
 autocmd BufWritePre *.js,*.css,*.scss,*.less,*.md,*.vue Prettier
+
+" ========
+" Vim Test
+" ========
+let test#strategy = "vimterminal"
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
 
