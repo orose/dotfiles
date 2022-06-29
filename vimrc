@@ -61,8 +61,10 @@ nmap <leader>l :bnext<CR>
 nmap <leader>h :bprevious<CR>
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
+
 " Move to latest buffer
-nnoremap <leader>p <C-^>
+" nnoremap <leader>p <C-^>
+nnoremap <BS> <c-^>
 
 " Close the current buffer and move to the previous one
 " This replicates the idea of closing a tab
