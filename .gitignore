@@ -1,5 +1,6 @@
 vim/swap
 vim/.netrwhist
 vim/bundle
+vim/sessions
 
 fish/fishd.*
