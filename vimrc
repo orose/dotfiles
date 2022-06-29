@@ -68,7 +68,7 @@ nnoremap <leader>p <C-^>
 " This replicates the idea of closing a tab
 nmap <leader>bq :bp <BAR> bd #<CR>
 
-nmap <leader>ne :NERDTree<cr>
+nmap <leader>ne :NERDTreeToggle<cr>
 nmap <leader>nf :NERDTreeFind<cr>
 
 
