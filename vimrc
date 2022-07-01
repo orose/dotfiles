@@ -44,6 +44,7 @@ set splitbelow
 set hlsearch
 set incsearch
 set ignorecase
+set updatetime=300
 set smartcase
 set backspace=indent,eol,start
 set mouse=a
