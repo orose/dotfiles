@@ -8,6 +8,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'alvan/vim-closetag'
+Plugin 'mhinz/vim-startify'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter.git'
