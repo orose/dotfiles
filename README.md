@@ -9,7 +9,13 @@ How to install
     $ vim +PluginInstall +qall
 
 Install Prettier (requires git and yarn)
-$ cd ~/git/dotfiles/vim/bundle/vim-prettier && yarn install
+
+    $ cd ~/git/dotfiles/vim/bundle/vim-prettier && yarn install
+
+Install CoC (requires git and yarn)
+
+    $ cd ~/git/dotfiles/vim/bundle/coc.nvim && yarn install
+    
 
 You should now be up and running!
 
