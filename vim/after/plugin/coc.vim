@@ -36,7 +36,7 @@ nnoremap <silent> <leader>cl  :<C-u>CocList locationlist<cr>
 nnoremap <silent> <leader>cd  :<C-u>CocList diagnostics<cr>
 
 " Perform code actions
-nmap <leader>do <Plug>(coc-codeaction)
+nmap <leader>ca <Plug>(coc-codeaction)
 
 " manage extensions
 nnoremap <silent> <leader>cx  :<C-u>CocList extensions<cr>
