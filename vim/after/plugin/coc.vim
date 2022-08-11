@@ -32,6 +32,12 @@ nnoremap <silent> <leader>cs  :<C-u>CocList -I symbols<cr>
 " List errors
 nnoremap <silent> <leader>cl  :<C-u>CocList locationlist<cr>
 
+" List diagnostics
+nnoremap <silent> <leader>cd  :<C-u>CocList diagnostics<cr>
+
+" Perform code actions
+nmap <leader>do <Plug>(coc-codeaction)
+
 " manage extensions
 nnoremap <silent> <leader>cx  :<C-u>CocList extensions<cr>
 
