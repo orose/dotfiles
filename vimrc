@@ -52,6 +52,7 @@ set ttymouse=xterm2
 set directory=$HOME/.vim/swap//
 let mapleader = ' '
 
+autocmd FileType java setlocal shiftwidth=4 softtabstop=4 textwidth=120 colorcolumn=120
 
 " ==================
 " Navigating buffers
