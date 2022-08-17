@@ -12,8 +12,8 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 
 " Navigate to next/prev error spotted by CoC
-nmap <silent> <Leader>j <Plug>(coc-diagnostic-prev)
-nmap <silent> <Leader>k <Plug>(coc-diagnostic-next)
+nmap <silent> <Leader>j <Plug>(coc-diagnostic-next)
+nmap <silent> <Leader>k <Plug>(coc-diagnostic-prev)
 
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
