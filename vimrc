@@ -28,6 +28,11 @@ Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 Plugin 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 
+if has('nvim')
+  Plugin 'nvim-lua/plenary.nvim'
+  Plugin 'ThePrimeagen/harpoon'
+endif
+
 call vundle#end()
 filetype plugin indent on
 
@@ -59,17 +64,18 @@ autocmd FileType java setlocal shiftwidth=4 softtabstop=4 textwidth=120 colorcol
 " ==================
 " Navigating buffers
 " ==================
+if !has('nvim')
+  " Move to the next buffer
+  nmap <leader>l :bnext<CR>
+  " Move to the previous buffer
+  nmap <leader>h :bprevious<CR>
+  " Show all open buffers and their status
+  nmap <leader>bl :ls<CR>
 
-" Move to the next buffer
-nmap <leader>l :bnext<CR>
-" Move to the previous buffer
-nmap <leader>h :bprevious<CR>
-" Show all open buffers and their status
-nmap <leader>bl :ls<CR>
-
-" Move to latest buffer
-" nnoremap <leader>p <C-^>
-nnoremap <BS> <c-^>
+  " Move to latest buffer
+  " nnoremap <leader>p <C-^>
+  nnoremap <BS> <c-^>
+endif
 
 " Close the current buffer and move to the previous one
 " This replicates the idea of closing a tab
@@ -148,3 +154,27 @@ let g:prettier#config#single_quote = 'false'
 let g:prettier#config#trailing_comma = 'none'
 autocmd BufWritePre *.js,*.css,*.scss,*.less,*.md,*.vue Prettier
 
+" =======
+" Harpoon
+" =======
+if has('nvim')
+  nmap <leader>m :lua require('harpoon.ui').toggle_quick_menu()<CR>
+  nmap <leader>a :lua require('harpoon.mark').add_file()<CR>
+  nmap <leader>l :lua require('harpoon.ui').nav_next()<CR>
+  nmap <leader>h :lua require('harpoon.ui').nav_prev()<CR>
+
+  nmap <leader>1 :lua require('harpoon.ui').nav_file(1)<CR>
+  nmap <leader>2 :lua require('harpoon.ui').nav_file(2)<CR>
+  nmap <leader>3 :lua require('harpoon.ui').nav_file(3)<CR>
+  nmap <leader>4 :lua require('harpoon.ui').nav_file(4)<CR>
+endif
+" Move to the next buffer
+" nmap <leader>l :bnext<CR>
+" Move to the previous buffer
+" nmap <leader>h :bprevious<CR>
+" Show all open buffers and their status
+" nmap <leader>bl :ls<CR>
+
+" Move to latest buffer
+" nnoremap <leader>p <C-^>
+" nnoremap <BS> <c-^>
