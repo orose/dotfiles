@@ -23,14 +23,19 @@ Plugin 'prettier/vim-prettier'
 
 Plugin 'micha/vim-colors-solarized'
 
-Plugin 'junegunn/fzf.vim'
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+if !has('nvim')
+  Plugin 'junegunn/fzf.vim'
+  Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+endif
 
 Plugin 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 
 if has('nvim')
   Plugin 'nvim-lua/plenary.nvim'
   Plugin 'ThePrimeagen/harpoon'
+
+  Plugin 'nvim-telescope/telescope.nvim',{ 'tag': '0.1.x' }
 endif
 
 call vundle#end()
@@ -135,15 +140,30 @@ let g:AutoPairsShortcutFastWrap = ''"
 " Fuzzy File Finder (fzf)
 " =======================
 
-" Search for files
-nnoremap <leader>o :Files<CR>
-" Search/grep inside files
-nnoremap <leader>f :Rg<CR>
-" Search Git Commits
-nnoremap <leader>g :Commits<CR>
-" Buffers
-nnoremap <leader>b :Buffers<CR>
+if !has('nvim')
+  " Search for files
+  nnoremap <leader>o :Files<CR>
+  " Search/grep inside files
+  nnoremap <leader>f :Rg<CR>
+  " Search Git Commits
+  nnoremap <leader>g :Commits<CR>
+  " Buffers
+  nnoremap <leader>b :Buffers<CR>
+endif
 
+" =========
+" Telescope
+" =========
+if has('nvim')
+  " Search for files
+  nnoremap <leader>o <cmd>Telescope find_files<CR>
+  " Search/grep inside files
+  nnoremap <leader>f <cmd>Telescope live_grep<CR>
+  " Search Git Commits
+  " nnoremap <leader>g :Commits<CR>
+  " Buffers
+  " nnoremap <leader>b :Buffers<CR>
+endif
 
 " ========
 " Prettier
@@ -168,13 +188,3 @@ if has('nvim')
   nmap <leader>3 :lua require('harpoon.ui').nav_file(3)<CR>
   nmap <leader>4 :lua require('harpoon.ui').nav_file(4)<CR>
 endif
-" Move to the next buffer
-" nmap <leader>l :bnext<CR>
-" Move to the previous buffer
-" nmap <leader>h :bprevious<CR>
-" Show all open buffers and their status
-" nmap <leader>bl :ls<CR>
-
-" Move to latest buffer
-" nnoremap <leader>p <C-^>
-" nnoremap <BS> <c-^>
