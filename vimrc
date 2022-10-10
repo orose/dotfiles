@@ -48,7 +48,9 @@ set updatetime=300
 set smartcase
 set backspace=indent,eol,start
 set mouse=a
-set ttymouse=xterm2
+if !has('nvim')
+    set ttymouse=xterm2
+endif
 set directory=$HOME/.vim/swap//
 let mapleader = ' '
 
