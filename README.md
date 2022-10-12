@@ -15,8 +15,15 @@ Install Prettier (requires git and yarn)
 Install CoC (requires git and yarn)
 
     $ cd ~/git/dotfiles/vim/bundle/coc.nvim && yarn install
-    
 
 You should now be up and running!
 
 In case vim is not working properly with fzf, checkout this guide: https://dev.to/iggredible/how-to-search-faster-in-vim-with-fzf-vim-36ko
+
+# LSP
+
+Install language servers:
+
+Javascript
+
+npm i -g typescript typescript-language-server
