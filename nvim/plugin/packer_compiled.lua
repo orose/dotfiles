@@ -169,6 +169,11 @@ _G.packer_plugins = {
     path = "/home/orose/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["monokai.nvim"] = {
+    loaded = true,
+    path = "/home/orose/.local/share/nvim/site/pack/packer/start/monokai.nvim",
+    url = "https://github.com/tanvirtin/monokai.nvim"
+  },
   ["null-ls.nvim"] = {
     loaded = true,
     path = "/home/orose/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
@@ -263,6 +268,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/orose/.local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "https://github.com/RRethy/vim-illuminate"
+  },
+  ["vscode.nvim"] = {
+    loaded = true,
+    path = "/home/orose/.local/share/nvim/site/pack/packer/start/vscode.nvim",
+    url = "https://github.com/mofiqul/vscode.nvim"
   }
 }
 
