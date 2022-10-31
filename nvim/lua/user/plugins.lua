@@ -67,6 +67,7 @@ return packer.startup(function(use)
   use { "ellisonleao/gruvbox.nvim", commit = "e9992fe5193f0d8d3694cec9171b678f514d0aea" }
   use { "tanvirtin/monokai.nvim" }
   use { "mofiqul/vscode.nvim" }
+  use { "sainnhe/everforest" }
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "b0dff0ec4f2748626aae13f011d1a47071fe9abc" } -- The completion plugin
