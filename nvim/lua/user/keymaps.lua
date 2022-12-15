@@ -64,6 +64,11 @@ keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 -- Git
 keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 
+-- Gitsigns
+keymap("n", "<leader>gn", ":Gitsigns next_hunk<CR>", opts)
+keymap("n", "<leader>gp", ":Gitsigns prev_hunk<CR>", opts)
+keymap("n", "<leader>gP", ":Gitsigns preview_hunk<CR>", opts)
+
 -- ToggleTerm
 keymap("n", "<leader>tt", ":ToggleTerm<CR>", opts)
 
