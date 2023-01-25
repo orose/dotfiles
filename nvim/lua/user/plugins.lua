@@ -62,9 +62,9 @@ return packer.startup(function(use)
   use { "tpope/vim-fugitive", commit = "dd8107cabf5fe85df94d5eedcae52415e543f208" }
 
   -- Colorschemes
-  use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
-  use { "lunarvim/darkplus.nvim", commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" }
-  use { "ellisonleao/gruvbox.nvim", commit = "e9992fe5193f0d8d3694cec9171b678f514d0aea" }
+  use { "folke/tokyonight.nvim" }
+  use { "lunarvim/darkplus.nvim" }
+  use { "ellisonleao/gruvbox.nvim"  }
   use { "tanvirtin/monokai.nvim" }
   use { "mofiqul/vscode.nvim" }
   use { "sainnhe/everforest" }
