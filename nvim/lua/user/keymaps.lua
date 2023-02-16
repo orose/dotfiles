@@ -41,6 +41,10 @@ keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 -- Better paste
 keymap("v", "p", '"_dP', opts)
 
+-- Navigate between functions
+keymap("n", "<C-p>", "]m", opts)
+keymap("n", "<C-n>", "[m", opts)
+
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
