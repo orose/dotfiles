@@ -42,8 +42,8 @@ keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Navigate between functions
-keymap("n", "<C-p>", "]m", opts)
-keymap("n", "<C-n>", "[m", opts)
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
 
 -- Insert --
 -- Press jk fast to enter
