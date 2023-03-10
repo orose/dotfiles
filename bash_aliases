@@ -11,7 +11,7 @@ fi
 alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
 
 # find all git repo urls within a folder
-find . -path '*/.git/config' -execdir git remote get-url origin \;
+alias gitrepos="find . -path '*/.git/config' -execdir git remote get-url origin \;"
 
 # Run docker tool
 alias dockertool="docker run --privileged -v /var/run/docker.sock:/run/docker.sock -ti -e TERM tomastomecek/sen"
