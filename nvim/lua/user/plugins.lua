@@ -67,6 +67,7 @@ return packer.startup(function(use)
   use { "tanvirtin/monokai.nvim" }
   use { "mofiqul/vscode.nvim" }
   use { "sainnhe/everforest" }
+  use { "nordtheme/vim" }
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp" } -- The completion plugin
