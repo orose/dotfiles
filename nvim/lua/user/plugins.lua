@@ -45,8 +45,8 @@ packer.init {
 return packer.startup(function(use)
   -- My plugins here
   use { "wbthomason/packer.nvim" } -- Have packer manage itself
-  use { "nvim-lua/plenary.nvim" } -- Useful lua functions used by lots of pluginsplugins
-  use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
+  use { "nvim-lua/plenary.nvim" }  -- Useful lua functions used by lots of pluginsplugins
+  use { "windwp/nvim-autopairs" }  -- Autopairs, integrates with both cmp and treesitter
   use { "numToStr/Comment.nvim" }
   use { "JoosepAlviste/nvim-ts-context-commentstring" }
   use { "kyazdani42/nvim-web-devicons" }
@@ -63,22 +63,22 @@ return packer.startup(function(use)
   -- Colorschemes
   use { "folke/tokyonight.nvim" }
   use { "lunarvim/darkplus.nvim" }
-  use { "ellisonleao/gruvbox.nvim"  }
+  use { "ellisonleao/gruvbox.nvim" }
   use { "tanvirtin/monokai.nvim" }
   use { "mofiqul/vscode.nvim" }
   use { "sainnhe/everforest" }
   use { "nordtheme/vim" }
 
   -- cmp plugins
-  use { "hrsh7th/nvim-cmp" } -- The completion plugin
-  use { "hrsh7th/cmp-buffer" } -- buffer completions
-  use { "hrsh7th/cmp-path" } -- path completions
+  use { "hrsh7th/nvim-cmp" }         -- The completion plugin
+  use { "hrsh7th/cmp-buffer" }       -- buffer completions
+  use { "hrsh7th/cmp-path" }         -- path completions
   use { "saadparwaiz1/cmp_luasnip" } -- snippet completions
   use { "hrsh7th/cmp-nvim-lsp" }
   use { "hrsh7th/cmp-nvim-lua" }
 
   -- snippets
-  use { "L3MON4D3/LuaSnip" } --snippet engine
+  use { "L3MON4D3/LuaSnip" }             --snippet engine
   use { "rafamadriz/friendly-snippets" } -- a bunch of snippets to use
 
   -- LSP
@@ -99,7 +99,9 @@ return packer.startup(function(use)
   use { "lewis6991/gitsigns.nvim" }
 
   -- Markdown preview
-use({ "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end, })
+  use({ "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end, })
+
+  use { 'mfussenegger/nvim-jdtls' }
 
   -- DAP
   use { "mfussenegger/nvim-dap" }
