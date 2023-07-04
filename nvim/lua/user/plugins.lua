@@ -68,6 +68,7 @@ return packer.startup(function(use)
   use { "mofiqul/vscode.nvim" }
   use { "sainnhe/everforest" }
   use { "nordtheme/vim" }
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp" }         -- The completion plugin
