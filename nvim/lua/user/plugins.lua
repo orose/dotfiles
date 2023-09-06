@@ -59,6 +59,7 @@ return packer.startup(function(use)
   use { "goolord/alpha-nvim" }
   use { "tpope/vim-fugitive" }
   use { "folke/which-key.nvim" }
+  use {'stevearc/dressing.nvim'}
 
   -- Colorschemes
   use { "folke/tokyonight.nvim" }
