@@ -5,6 +5,7 @@ set rnu
 nnoremap <leader>lf :action ReformatCode
 nnoremap <leader>lr :action RenameElement
 nnoremap gd :action GotoDeclaration
+nnoremap gr :action GotoDeclaration
 nnoremap gi :action GotoImplementation
 
 nnoremap <leader>tr :action RunClass
