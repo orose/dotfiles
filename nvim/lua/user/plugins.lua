@@ -55,11 +55,9 @@ return packer.startup(function(use)
   use { "nvim-lualine/lualine.nvim" }
   use { "akinsho/toggleterm.nvim" }
   use { "ahmedkhalf/project.nvim" }
-  use { "lukas-reineke/indent-blankline.nvim" }
   use { "goolord/alpha-nvim" }
   use { "tpope/vim-fugitive" }
   use { "folke/which-key.nvim" }
-  use {'stevearc/dressing.nvim'}
 
   -- Colorschemes
   use { "folke/tokyonight.nvim" }
