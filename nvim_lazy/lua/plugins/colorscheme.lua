@@ -1,6 +1,8 @@
 return {
-  { "neanias/everforest-nvim" },
   { "catppuccin/nvim" },
+  { "ellisonleao/gruvbox.nvim" },
+  { "neanias/everforest-nvim" },
+
   {
     "LazyVim/LazyVim",
     opts = {
