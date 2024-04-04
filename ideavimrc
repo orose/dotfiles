@@ -2,6 +2,8 @@ let mapleader = " "
 
 set rnu
 
+map <leader>z :action ToggleDistractionFreeMode
+
 nnoremap <leader>lf :action ReformatCode
 nnoremap <leader>lr :action RenameElement
 nnoremap gd :action GotoDeclaration<CR>
@@ -11,4 +13,9 @@ nnoremap gb :action Back<CR>
 
 nnoremap <leader>tr :action RunClass
 nnoremap <leader>td :action DebugClass
+map <leader>b :action ToggleLineBreakpoint
 
+nnoremap sr :action Resume<CR>
+nnoremap so :action StepOver<CR>
+nnoremap si :action StepInto<CR>
+nnoremap ss :action Stop<CR>
