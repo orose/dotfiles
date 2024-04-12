@@ -7,6 +7,7 @@ return {
 	},
 	config = function()
 		require("nvim-tree").setup({})
+		vim.keymap.set("n", "<leader>f", ":NvimTreeFindFileToggle<CR>", { desc = "Toggle NvimTree" })
 	end,
 }
 
