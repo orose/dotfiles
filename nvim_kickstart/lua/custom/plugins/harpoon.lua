@@ -12,10 +12,10 @@ return {
 		vim.keymap.set("n", "<leader>l", function()
 			harpoon.ui:toggle_quick_menu(harpoon:list())
 		end, { desc = "Harpoon: Show list" })
-		vim.keymap.set("n", "<C-h>", function()
+		vim.keymap.set("n", "<C-j>", function()
 			harpoon:list():prev()
 		end, { desc = "Harpoon: Goto previous file" })
-		vim.keymap.set("n", "<C-l>", function()
+		vim.keymap.set("n", "<C-k>", function()
 			harpoon:list():next()
 		end, { desc = "Harpoon: Goto next file" })
 	end,
