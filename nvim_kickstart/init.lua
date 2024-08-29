@@ -532,6 +532,16 @@ require("lazy").setup({
 				tsserver = {},
 				--
 
+				rust_analyzer = {
+					settings = {
+						["rust-analyzer"] = {
+							check = {
+								command = "clippy",
+							},
+						},
+					},
+				},
+
 				lua_ls = {
 					-- cmd = {...},
 					-- filetypes { ...},
@@ -601,6 +611,7 @@ require("lazy").setup({
 			},
 			formatters_by_ft = {
 				lua = { "stylua" },
+				rust = { "rustfmt", lsp_format = "fallback" },
 				-- Conform can also run multiple formatters sequentially
 				-- python = { "isort", "black" },
 				--
