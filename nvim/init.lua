@@ -67,7 +67,7 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 vim.opt.foldmethod = "indent"
-vim.opt.foldlevel = 1
+vim.opt.foldlevel = 99
 vim.opt.foldcolumn = "2"
 
 -- [[ Basic Keymaps ]]
