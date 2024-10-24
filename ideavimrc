@@ -1,7 +1,11 @@
 let mapleader = " "
 
+" ============================================
+" Common settings
+" ============================================
+
 set clipboard+=unnamed
-set hlsearch
+" set hlsearch
 set incsearch
 set number relativenumber
 set scrolloff=10
