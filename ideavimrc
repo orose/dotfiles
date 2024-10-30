@@ -14,13 +14,17 @@ set smartcase
 set visualbell
 
 " ============================================
-" Common settings
+" Keymaps
 " ============================================
 
 nmap <C-p> <Action>(PreviousTab)
 nmap <C-n> <Action>(NextTab)
 
 map <leader>z :action ToggleDistractionFreeMode<CR>
+map <leader>Z :action ToggleZenMode<CR>
+
+nmap <leader>m <action>(Git.Menu)
+nmap <leader>i <action>(Generate)
 
 nnoremap <leader>lf :action ReformatCode
 nnoremap <leader>lr :action RenameElement
