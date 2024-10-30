@@ -23,7 +23,7 @@ nmap <C-n> <Action>(NextTab)
 map <leader>z :action ToggleDistractionFreeMode<CR>
 map <leader>Z :action ToggleZenMode<CR>
 
-nmap <leader>m <action>(Git.Menu)
+nmap <leader>g <action>(Git.Menu)
 nmap <leader>i <action>(Generate)
 
 nnoremap <leader>lf :action ReformatCode
