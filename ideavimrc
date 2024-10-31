@@ -26,8 +26,8 @@ map <leader>Z :action ToggleZenMode<CR>
 nmap <leader>g <action>(Git.Menu)
 nmap <leader>i <action>(Generate)
 
-nnoremap <leader>lf :action ReformatCode
-nnoremap <leader>lr :action RenameElement
+nnoremap <leader>fb :action ReformatCode
+nnoremap <leader>rn :action RenameElement
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap gr :action GotoDeclaration<CR>
 nnoremap gi :action GotoImplementation<CR>
