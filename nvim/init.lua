@@ -43,6 +43,8 @@ vim.opt.signcolumn = "yes"
 -- Decrease update time
 vim.opt.updatetime = 250
 
+vim.opt.conceallevel = 2
+
 -- Decrease mapped sequence wait time
 -- Displays which-key popup sooner
 vim.opt.timeoutlen = 300
