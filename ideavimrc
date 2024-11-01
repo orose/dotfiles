@@ -13,6 +13,8 @@ set showcmd
 set smartcase
 set visualbell
 
+set NERDTree
+
 " ============================================
 " Keymaps
 " ============================================
@@ -25,6 +27,8 @@ map <leader>Z :action ToggleZenMode<CR>
 
 nmap <leader>g <action>(Git.Menu)
 nmap <leader>i <action>(Generate)
+
+nmap <leader>n :NERDTreeFind<CR>
 
 nnoremap <leader>fb :action ReformatCode
 nnoremap <leader>rn :action RenameElement
