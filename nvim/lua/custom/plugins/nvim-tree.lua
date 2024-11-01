@@ -11,7 +11,7 @@ return {
 				width = 60,
 			},
 		})
-		vim.keymap.set("n", "<leader>f", ":NvimTreeFindFileToggle<CR>", { desc = "Toggle NvimTree" })
+		vim.keymap.set("n", "<leader>n", ":NvimTreeFindFileToggle<CR>", { desc = "Toggle NvimTree" })
 	end,
 }
 
