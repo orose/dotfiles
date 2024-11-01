@@ -7,8 +7,8 @@ return {
 	config = function()
 		require("obsidian").setup({
 			workspaces = { {
-				name = "Skatteetaten",
-				path = "~/OneDrive - Skatteetaten/Notater",
+				name = "Notater",
+				path = "~/Notater",
 			} },
 			note_id_func = function(title)
 				local sanitized_title = title:gsub("[^A-Za-z0-9]", "_"):lower()
@@ -19,7 +19,10 @@ return {
 			end,
 		})
 
-		vim.api.nvim_set_keymap("n", "<leader>ob", ":vsplit | ObsidianSearch<CR>", { noremap = true, silent = true })
+		vim.api.nvim_set_keymap("n", "<leader>os", ":vsplit | ObsidianSearch<CR>", { noremap = true, silent = true })
+		vim.api.nvim_set_keymap("n", "<leader>ob", ":ObsidianSearch<CR>", { noremap = true, silent = true })
+		vim.api.nvim_set_keymap("n", "<leader>on", ":ObsidianNew<CR>", { noremap = true, silent = true })
+		vim.api.nvim_set_keymap("n", "<leader>ol", ":ObsidianBacklinks<CR>", { noremap = true, silent = true })
 	end,
 }
 
