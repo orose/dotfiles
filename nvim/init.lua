@@ -306,7 +306,20 @@ require("lazy").setup({
 				--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
 				--   },
 				-- },
-				-- pickers = {}
+				defaults = {
+					layout_strategy = "vertical",
+					layout_config = { height = 0.75 },
+				},
+				-- pickers = {
+				-- 	find_files = {
+				-- 		theme = "dropdown",
+				-- 		previewer = false,
+				-- 	},
+				-- 	live_grep = {
+				-- 		theme = "dropdown",
+				-- 		previewer = true,
+				-- 	},
+				-- },
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown(),
