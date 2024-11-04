@@ -163,7 +163,12 @@ return {
 			--    https://github.com/pmizio/typescript-tools.nvim
 			--
 			-- But for many setups, the LSP (`ts_ls`) will work just fine
-			-- ts_ls = {},
+			ts_ls = {},
+			html = { filetypes = { "html" } },
+			cssls = {},
+			dockerls = {},
+			jsonls = {},
+			yamlls = {},
 			--
 
 			lua_ls = {
@@ -176,7 +181,7 @@ return {
 							callSnippet = "Replace",
 						},
 						-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-						-- diagnostics = { disable = { 'missing-fields' } },
+						diagnostics = { disable = { "missing-fields" } },
 					},
 				},
 			},
