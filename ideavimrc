@@ -8,7 +8,7 @@ set clipboard+=unnamed
 " set hlsearch
 set incsearch
 set number relativenumber
-set scrolloff=10
+set scrolloff=5
 set showcmd
 set smartcase
 set visualbell
@@ -29,6 +29,9 @@ nmap <leader>g <action>(Git.Menu)
 nmap <leader>i <action>(Generate)
 
 nmap <leader>n :NERDTreeFind<CR>
+
+" Switch between the last two files
+nmap <leader><leader> :e#<CR>
 
 nnoremap <leader>fb :action ReformatCode
 nnoremap <leader>rn :action RenameElement
