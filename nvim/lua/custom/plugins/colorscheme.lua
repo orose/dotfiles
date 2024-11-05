@@ -20,6 +20,7 @@ return { -- You can easily change to a different colorscheme.
 		-- vim.cmd.hi("Comment gui=none")
 
 		vim.g.gruvbox_material_enable_italic = true
+		vim.g.gruvbox_material_transparent_background = 2
 		vim.cmd.colorscheme("gruvbox-material")
 	end,
 }
