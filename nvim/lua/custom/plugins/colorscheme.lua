@@ -4,24 +4,18 @@ return { -- You can easily change to a different colorscheme.
 	--
 	-- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
 	-- "folke/tokyonight.nvim",
-	-- "catppuccin/nvim",
-	"sainnhe/gruvbox-material",
-	-- name = "catppuccin",
-	name = "gruvbox-material",
+	"catppuccin/nvim",
+	name = "catppuccin",
 	priority = 1000, -- Make sure to load this before all the other start plugins.
 	init = function()
 		-- Load the colorscheme here.
 		-- Like many other themes, this one has different styles, and you could load
 		-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
 		-- vim.cmd.colorscheme("tokyonight-night")
-		-- vim.cmd.colorscheme("catppuccin-mocha")
+		vim.cmd.colorscheme("catppuccin-mocha")
 
 		-- You can configure highlights by doing something like:
 		-- vim.cmd.hi("Comment gui=none")
-
-		vim.g.gruvbox_material_enable_italic = true
-		vim.g.gruvbox_material_transparent_background = 2
-		vim.cmd.colorscheme("gruvbox-material")
 	end,
 }
 
