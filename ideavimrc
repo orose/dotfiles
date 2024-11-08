@@ -35,6 +35,8 @@ nmap <leader><leader> :e#<CR>
 
 nnoremap <leader>fb :action ReformatCode
 nnoremap <leader>rn :action RenameElement
+vmap <Leader>e :action ExtractMethod
+
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap gr :action GotoDeclaration<CR>
 nnoremap gi :action GotoImplementation<CR>
@@ -42,7 +44,10 @@ nnoremap gb :action Back<CR>
 
 nnoremap <leader>tr :action RunClass
 nnoremap <leader>td :action DebugClass
+nnoremap <leader>rr :action Rerun
 map <leader>b :action ToggleLineBreakpoint
+
+vmap <Leader>c :action CommentByLineComment<CR>
 
 nnoremap sr :action Resume<CR>
 nnoremap so :action StepOver<CR>
