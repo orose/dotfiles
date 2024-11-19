@@ -19,10 +19,11 @@ return {
 			end,
 		})
 
-		vim.api.nvim_set_keymap("n", "<leader>os", ":vsplit | ObsidianSearch<CR>", { noremap = true, silent = true })
 		vim.api.nvim_set_keymap("n", "<leader>ob", ":ObsidianSearch<CR>", { noremap = true, silent = true })
-		vim.api.nvim_set_keymap("n", "<leader>on", ":ObsidianNew<CR>", { noremap = true, silent = true })
 		vim.api.nvim_set_keymap("n", "<leader>ol", ":ObsidianBacklinks<CR>", { noremap = true, silent = true })
+		vim.api.nvim_set_keymap("n", "<leader>on", ":ObsidianNew<CR>", { noremap = true, silent = true })
+		vim.api.nvim_set_keymap("n", "<leader>os", ":vsplit | ObsidianSearch<CR>", { noremap = true, silent = true })
+		vim.api.nvim_set_keymap("n", "<leader>ot", ":ObsidianTags<CR>", { noremap = true, silent = true })
 	end,
 }
 
