@@ -28,9 +28,11 @@ nmap <C-u> <C-u>zz
 
 map <leader>z :action ToggleDistractionFreeMode<CR>
 map <leader>Z :action ToggleZenMode<CR>
+map <leader>p :action TogglePresentationMode<CR>
 
 nmap <leader>g <action>(Git.Menu)
 nmap <leader>i <action>(Generate)
+nmap <leader>b <action>(BuildMenu)
 
 nmap <leader>n :NERDTreeFind<CR>
 
@@ -39,7 +41,7 @@ nmap <leader><leader> :e#<CR>
 
 nnoremap <leader>fb :action ReformatCode
 nnoremap <leader>rn :action RenameElement
-vmap <Leader>e :action ExtractMethod
+vmap <leader>e :action ExtractMethod
 
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap gr :action GotoDeclaration<CR>
@@ -49,7 +51,7 @@ nnoremap gb :action Back<CR>
 nnoremap <leader>tr :action RunClass
 nnoremap <leader>td :action DebugClass
 nnoremap <leader>rr :action Rerun
-map <leader>b :action ToggleLineBreakpoint
+map <leader>B :action ToggleLineBreakpoint
 
 vmap <Leader>c :action CommentByLineComment<CR>
 
