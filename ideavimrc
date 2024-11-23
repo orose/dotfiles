@@ -30,6 +30,7 @@ map <leader>z :action ToggleDistractionFreeMode<CR>
 map <leader>Z :action ToggleZenMode<CR>
 map <leader>p :action TogglePresentationMode<CR>
 
+nmap <leader>ga :action Annotate<CR>
 nmap <leader>g <action>(Git.Menu)
 nmap <leader>i <action>(Generate)
 nmap <leader>b <action>(BuildMenu)
