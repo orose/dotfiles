@@ -19,8 +19,8 @@ set NERDTree
 " Keymaps
 " ============================================
 
-nmap <C-j> <Action>(PreviousTab)
-nmap <C-k> <Action>(NextTab)
+nmap <C-h> <Action>(PreviousTab)
+nmap <C-l> <Action>(NextTab)
 
 " Center cursor when navigating up an down
 nmap <C-d> <C-d>zz
