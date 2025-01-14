@@ -10,6 +10,9 @@ return {
 				name = "Notater",
 				path = "~/Notater",
 			} },
+			templates = {
+				folder = "templates",
+			},
 			note_id_func = function(title)
 				local sanitized_title = title:gsub("[^A-Za-z0-9]", "_"):lower()
 				return sanitized_title
@@ -23,7 +26,7 @@ return {
 		vim.api.nvim_set_keymap("n", "<leader>ol", ":ObsidianBacklinks<CR>", { noremap = true, silent = true })
 		vim.api.nvim_set_keymap("n", "<leader>on", ":ObsidianNew<CR>", { noremap = true, silent = true })
 		vim.api.nvim_set_keymap("n", "<leader>os", ":vsplit | ObsidianSearch<CR>", { noremap = true, silent = true })
-		vim.api.nvim_set_keymap("n", "<leader>ot", ":ObsidianTags<CR>", { noremap = true, silent = true })
+		vim.api.nvim_set_keymap("n", "<leader>ot", ":ObsidianNewFromTemplate<CR>", { noremap = true, silent = true })
 	end,
 }
 
