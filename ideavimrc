@@ -40,6 +40,8 @@ nmap <leader>n :NERDTreeFind<CR>
 " Switch between the last two files
 nmap <leader><leader> :e#<CR>
 
+nnoremap <leader>hh :action ToggleInlayHintsGloballyAction<CR>
+
 nnoremap <leader>fb :action ReformatCode
 nnoremap <leader>rn :action RenameElement
 vmap <leader>e :action ExtractMethod
