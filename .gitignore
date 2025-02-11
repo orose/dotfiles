@@ -2,5 +2,6 @@ vim/swap
 vim/.netrwhist
 vim/bundle
 vim/sessions
+nvim/lazy-lock.json
 
 fish/fishd.*
