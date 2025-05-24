@@ -6,11 +6,12 @@ return { -- You can easily change to a different colorscheme.
 	priority = 1000, -- Make sure to load this before all the other start plugins.
 	init = function()
 		require("rose-pine").setup({
-			variant = "dawn",
+			variant = "auto",
+			dark_variant = "moon",
 			disable_background = true,
 		})
 
-		vim.cmd.colorscheme("rose-pine-dawn")
+		vim.cmd("colorscheme rose-pine")
 
 		-- Ekstra konfigurasjoner for å sikre transparens
 		vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
