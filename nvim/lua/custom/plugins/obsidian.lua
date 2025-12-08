@@ -6,6 +6,7 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
 		require("obsidian").setup({
+			ui = { enable = false },
 			workspaces = { {
 				name = "Notater",
 				path = "~/Notater",
