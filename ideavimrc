@@ -29,6 +29,7 @@ nmap <C-u> <C-u>zz
 map <leader>z :action ToggleDistractionFreeMode<CR>
 map <leader>Z :action ToggleZenMode<CR>
 map <leader>p :action TogglePresentationMode<CR>
+map <leader>s :action FileStructurePopup<CR>
 
 nmap <leader>ga :action Annotate<CR>
 nmap <leader>g <action>(Git.Menu)
@@ -41,6 +42,7 @@ nmap <leader>n :NERDTreeFind<CR>
 nmap <leader><leader> :e#<CR>
 
 nnoremap <leader>hh :action ToggleInlayHintsGloballyAction<CR>
+nnoremap <leader>to :action ActivateTODOToolWindow<CR>
 
 nnoremap <leader>fb :action ReformatCode
 nnoremap <leader>rn :action RenameElement
@@ -52,8 +54,10 @@ nnoremap gi :action GotoImplementation<CR>
 nnoremap gb :action Back<CR>
 
 nnoremap <leader>tr :action RunClass
+nnoremap <leader>ts :action TestTreePopupMenu
 nnoremap <leader>td :action DebugClass
 nnoremap <leader>rr :action Rerun
+
 map <leader>B :action ToggleLineBreakpoint
 
 vmap <Leader>c :action CommentByLineComment<CR>
