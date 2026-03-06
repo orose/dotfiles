@@ -1,8 +1,9 @@
-local ACTIVE_THEME = "catppuccin"
+local ACTIVE_THEME = "solarized"
 
 local themes = {
 	require("custom.plugins.colorschemes.rose-pine"),
 	require("custom.plugins.colorschemes.catppuccin"),
+	require("custom.plugins.colorschemes.solarized"),
 }
 
 -- Sett priority og aktivering basert på valgt theme
