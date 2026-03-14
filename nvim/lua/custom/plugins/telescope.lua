@@ -27,6 +27,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
 			defaults = {
 				layout_strategy = "vertical",
 				layout_config = { height = 0.75 },
+				preview = {
+					treesitter = false,
+				},
 			},
 			pickers = {
 				lsp_references = { show_line = false },
