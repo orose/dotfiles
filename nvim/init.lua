@@ -77,9 +77,26 @@ vim.opt.scrolloff = 10
 -- vim.opt.foldlevel = 99
 -- vim.opt.foldcolumn = "2"
 
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevelstart = 99
 vim.opt.foldlevel = 99
+vim.opt.foldnestmax = 4
+vim.opt.foldtext = ""
+
+vim.api.nvim_create_autocmd("FileType", {
+	desc = "Use treesitter for folding when a parser is available",
+	group = vim.api.nvim_create_augroup("treesitter-folding", { clear = true }),
+	callback = function()
+		local ft = vim.bo.filetype
+		-- Some filetypes have their own ftplugin fold config (e.g. java)
+		if ft == "java" then return end
+		if pcall(vim.treesitter.get_parser, 0) then
+			vim.opt_local.foldmethod = "expr"
+			vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+		else
+			vim.opt_local.foldmethod = "indent"
+		end
+	end,
+})
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
