@@ -15,7 +15,15 @@ printf -v FILL "%${FILLED}s"; printf -v PAD "%${EMPTY}s"
 BAR="${FILL// /█}${PAD// /░}"
 MINS=$((DURATION_MS / 60000)); SECS=$(((DURATION_MS % 60000) / 1000))
 BRANCH=""
-GIT_OPTIONAL_LOCKS=0 git -C "$DIR" rev-parse --git-dir > /dev/null 2>&1 && BRANCH=" | 🌿 $(GIT_OPTIONAL_LOCKS=0 git -C "$DIR" branch --show-current 2>/dev/null)"
-echo -e "${CYAN}[$MODEL]${RESET} 📁 ${DIR##*/}$BRANCH"
-COST_FMT=$(printf '$%.2f' "$COST")
+GIT_DIFF=""
+if GIT_OPTIONAL_LOCKS=0 git -C "$DIR" rev-parse --git-dir > /dev/null 2>&1; then
+  BRANCH=" | 🌿 $(GIT_OPTIONAL_LOCKS=0 git -C "$DIR" branch --show-current 2>/dev/null)"
+  STAGED=$(GIT_OPTIONAL_LOCKS=0 git -C "$DIR" diff --cached --numstat 2>/dev/null | wc -l | tr -d ' ')
+  MODIFIED=$(GIT_OPTIONAL_LOCKS=0 git -C "$DIR" diff --numstat 2>/dev/null | wc -l | tr -d ' ')
+  [ "$STAGED" -gt 0 ] && GIT_DIFF="${GIT_DIFF} ${GREEN}+${STAGED}${RESET}"
+  [ "$MODIFIED" -gt 0 ] && GIT_DIFF="${GIT_DIFF} ${YELLOW}~${MODIFIED}${RESET}"
+fi
+echo -e "${CYAN}[$MODEL]${RESET} 📁 ${DIR##*/}${BRANCH}${GIT_DIFF}"
+NOK=$(echo "$COST * 10.80" | bc)
+COST_FMT=$(printf 'kr %.2f' "$NOK")
 echo -e "${BAR_COLOR}${BAR}${RESET} ${PCT}% | ${YELLOW}${COST_FMT}${RESET} | ⏱️ ${MINS}m ${SECS}s"
