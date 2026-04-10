@@ -1,0 +1,10 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline-command.sh"
+  },
+  "language": "Norsk",
+  "feedbackSurveyState": {
+    "lastShownTime": 1754400574277
+  }
+}
