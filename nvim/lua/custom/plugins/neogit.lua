@@ -21,6 +21,9 @@ return {
 	keys = {
 		{ "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" },
 	},
+	opts = {
+		kind = "auto",
+	},
 }
 
 -- vim: ts=2 sts=2 sw=2 et
