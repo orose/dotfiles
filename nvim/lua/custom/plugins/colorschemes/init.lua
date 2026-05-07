@@ -11,17 +11,13 @@ local themes = {
 for _, theme in ipairs(themes) do
 	if theme.name == ACTIVE_THEME then
 		theme.priority = 1000
-		theme.init = function()
-			-- Kjør original config hvis den finnes
-			if theme.config then
-				theme.config()
+		local original_config = theme.config
+		theme.config = function()
+			if original_config then
+				original_config()
 			end
-
-			-- Aktiver theme
-			vim.cmd("colorscheme " .. ACTIVE_THEME)
+			vim.cmd("colorscheme " .. (theme.colorscheme or ACTIVE_THEME))
 		end
-		-- Fjern config siden vi kjører den i init
-		theme.config = nil
 	else
 		theme.priority = 999
 	end

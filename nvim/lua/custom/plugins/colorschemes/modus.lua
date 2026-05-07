@@ -1,15 +1,15 @@
 return {
 	"miikanissi/modus-themes.nvim",
 	name = "modus",
+	colorscheme = "modus_operandi",
 	config = function()
 		require("modus-themes").setup({
-			-- Theme comes in two styles `modus_operandi` and `modus_vivendi`
-			-- `auto` will automatically set style based on background set with vim.o.background
-			style = "auto",
+			style = "modus_operandi",
 			variants = {
 				modus_operandi = "tinted",
 				modus_vivendi = "tinted",
 			},
+			transparent = true,
 			styles = {
 				functions = { italic = true }, -- Enable italics for functions
 			},
