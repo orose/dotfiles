@@ -1,8 +1,9 @@
-local ACTIVE_THEME = "rose-pine"
+local ACTIVE_THEME = "modus"
 
 local themes = {
 	require("custom.plugins.colorschemes.rose-pine"),
 	require("custom.plugins.colorschemes.catppuccin"),
+	require("custom.plugins.colorschemes.modus"),
 	require("custom.plugins.colorschemes.solarized"),
 }
 
