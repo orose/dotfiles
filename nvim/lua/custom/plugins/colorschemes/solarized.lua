@@ -1,7 +1,8 @@
 return {
 	"maxmx03/solarized.nvim",
 	name = "solarized",
-	colorscheme = "solarized",
+	dark_colorscheme = "solarized",
+	light_colorscheme = "solarized",
 	config = function()
 		require("solarized").setup({})
 	end,

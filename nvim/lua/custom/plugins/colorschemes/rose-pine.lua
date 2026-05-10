@@ -1,7 +1,8 @@
 return {
 	"rose-pine/neovim",
 	name = "rose-pine",
-	colorscheme = "rose-pine",
+	dark_colorscheme = "rose-pine",
+	light_colorscheme = "rose-pine",
 	config = function()
 		require("rose-pine").setup({
 			variant = "auto",

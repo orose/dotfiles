@@ -1,7 +1,8 @@
 return {
 	"catppuccin/nvim",
 	name = "catppuccin",
-	colorscheme = "catppuccin",
+	dark_colorscheme = "catppuccin",
+	light_colorscheme = "catppuccin",
 	config = function()
 		require("catppuccin").setup({
 			flavour = "mocha",

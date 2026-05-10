@@ -1,10 +1,10 @@
 return {
 	"miikanissi/modus-themes.nvim",
 	name = "modus",
-	colorscheme = "modus_operandi",
+	dark_colorscheme = "modus_vivendi",
+	light_colorscheme = "modus_operandi",
 	config = function()
 		require("modus-themes").setup({
-			style = "modus_operandi",
 			variants = {
 				modus_operandi = "tinted",
 				modus_vivendi = "tinted",
