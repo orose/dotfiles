@@ -21,7 +21,7 @@ vim.opt.timeoutlen = 300
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = "  ", trail = "·", nbsp = "␣" }
 vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
@@ -36,7 +36,9 @@ vim.api.nvim_create_autocmd("FileType", {
 	group = vim.api.nvim_create_augroup("treesitter-folding", { clear = true }),
 	callback = function()
 		local ft = vim.bo.filetype
-		if ft == "java" then return end
+		if ft == "java" then
+			return
+		end
 		if pcall(vim.treesitter.get_parser, 0) then
 			vim.opt_local.foldmethod = "expr"
 			vim.opt_local.foldexpr = "v:lua.vim.treesitter.foldexpr()"
