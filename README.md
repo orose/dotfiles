@@ -1,29 +1,102 @@
 # Dotfiles
 
-How to install
+Personal configuration for a terminal-first development environment on macOS:
+Neovim, tmux, git, bash/starship, IdeaVim and Claude Code.
 
-    $ git clone https://github.com/orose/dotfiles.git ~/git/dotfiles
-    $ cd && ln -s git/dotfiles/vimrc .vimrc
-    $ cd && ln -s git/dotfiles/vim .vim
-    $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    $ vim +PluginInstall +qall
+## Contents
 
-Install Prettier (requires git and yarn)
+| Path | What |
+| --- | --- |
+| `nvim/` | Neovim config (kickstart.nvim-based, plugins via lazy.nvim) |
+| `tmux/` | `tmux.conf` and one theme file per colorscheme variant |
+| `git/` | `gitconfig` (with aliases) and `gitignore_global` |
+| `bash_profile`, `bash_aliases`, `bash_prompt` | Bash setup |
+| `starship.toml` | Starship prompt |
+| `ideavimrc` | Vim keybindings for IntelliJ products |
+| `claude/` | Claude Code settings, statusline script, guidelines and skills |
 
-    $ cd ~/git/dotfiles/vim/bundle/vim-prettier && yarn install
+## Installation
 
-Install CoC (requires git and yarn)
+There is no install script — clone the repo and symlink what you need.
 
-    $ cd ~/git/dotfiles/vim/bundle/coc.nvim && yarn install
+```sh
+git clone https://github.com/orose/dotfiles.git ~/git/dotfiles
+cd ~
+DOT=~/git/dotfiles
 
-You should now be up and running!
+# Neovim
+mkdir -p ~/.config
+ln -s $DOT/nvim ~/.config/nvim
 
-In case vim is not working properly with fzf, checkout this guide: https://dev.to/iggredible/how-to-search-faster-in-vim-with-fzf-vim-36ko
+# tmux (pick one theme file)
+ln -s $DOT/tmux/tmux.conf ~/.tmux.conf
+ln -s $DOT/tmux/tmux-theme-modus-vivendi.conf ~/.tmux-theme.conf
 
-# LSP
+# git
+ln -s $DOT/git/gitconfig ~/.gitconfig
+ln -s $DOT/git/gitignore_global ~/.gitignore_global
 
-Install language servers:
+# shell and prompt
+ln -s $DOT/bash_profile ~/.bash_profile
+ln -s $DOT/bash_aliases ~/.bash_aliases
+ln -s $DOT/bash_prompt ~/.bash_prompt
+ln -s $DOT/starship.toml ~/.config/starship.toml
 
-Javascript
+# IdeaVim
+ln -s $DOT/ideavimrc ~/.ideavimrc
 
-npm i -g typescript typescript-language-server
+# Claude Code
+mkdir -p ~/.claude
+ln -s $DOT/claude/settings.json ~/.claude/settings.json
+ln -s $DOT/claude/statusline-command.sh ~/.claude/statusline-command.sh
+```
+
+### Dependencies
+
+- [Neovim](https://neovim.io) (recent stable) and a [Nerd Font](https://www.nerdfonts.com)
+- `git`, `make` and a C compiler (treesitter parsers, telescope-fzf-native)
+- [ripgrep](https://github.com/BurntSushi/ripgrep) (Telescope live grep)
+- [starship](https://starship.rs)
+- `jq` and `bc` (Claude Code statusline, JSON formatting)
+- Node.js via [nvm](https://github.com/nvm-sh/nvm) (some language servers and prettier)
+- `reattach-to-user-namespace` (tmux clipboard bindings)
+
+## Neovim
+
+Plugins install automatically on first launch. Language servers and formatters
+are installed by Mason (`:Mason`). To update all plugins headlessly:
+
+```sh
+nvim --headless "+Lazy! sync" +qa
+```
+
+`lazy-lock.json` is gitignored, so plugin versions are not pinned.
+
+Structure:
+
+- `init.lua` — options, base keymaps, lazy.nvim bootstrap
+- `lua/custom/plugins/` — one file per plugin; every file is auto-imported
+- `lua/custom/plugins/colorschemes/` — theme specs and the theme loader
+- `after/ftplugin/` — filetype-specific settings (Java, Markdown, text)
+
+Leader is `<Space>`. Press it and wait for which-key to list available keymaps.
+
+## Themes
+
+Supported colorschemes: **Modus** (default), **Catppuccin**, **Rose Pine** and **Solarized**.
+
+- **Neovim:** set `ACTIVE_THEME` in `nvim/lua/custom/plugins/colorschemes/init.lua`.
+  Themes with both dark and light variants follow the macOS appearance automatically.
+- **tmux:** point `~/.tmux-theme.conf` at one of `tmux/tmux-theme-*.conf` and
+  reload with `prefix + r`.
+- **Starship:** change `palette` in `starship.toml`.
+
+## tmux
+
+Prefix is `Ctrl-a`. Highlights:
+
+- `|` / `-` — split horizontally / vertically
+- `h j k l` — move between panes, `H J K L` — resize
+- `<` / `>` — swap windows, `Ctrl-a` — last window
+- `Escape` — copy mode (vi keys), `p` — paste
+- `r` — reload config
