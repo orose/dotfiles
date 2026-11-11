@@ -1,2 +1,11 @@
 theme = dark:Modus Vivendi Tinted,light:Modus Operandi Tinted
+font-family = "FiraCode Nerd Font Mono"
 
+macos-titlebar-style = tabs
+
+# Gjennomsiktighet + blur
+background-opacity = 0.80
+background-blur = 20
+background-opacity-cells = true
+
+keybind = cmd+shift+o=toggle_background_opacity
