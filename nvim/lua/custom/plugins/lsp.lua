@@ -68,6 +68,7 @@ return {
 			dockerls = {},
 			jsonls = {},
 			yamlls = {},
+			cucumber_language_server = {},
 			lua_ls = {
 				settings = {
 					Lua = {

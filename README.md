@@ -77,7 +77,8 @@ Structure:
 - `init.lua` — options, base keymaps, lazy.nvim bootstrap
 - `lua/custom/plugins/` — one file per plugin; every file is auto-imported
 - `lua/custom/plugins/colorschemes/` — theme specs and the theme loader
-- `after/ftplugin/` — filetype-specific settings (Java, Markdown, text)
+- `lua/custom/cucumber.lua` — run/debug Cucumber scenarios via Maven (`<leader>T*` in `.feature` files)
+- `after/ftplugin/` — filetype-specific settings (Java, Cucumber, Markdown, text)
 
 Leader is `<Space>`. Press it and wait for which-key to list available keymaps.
 

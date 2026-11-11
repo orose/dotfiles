@@ -38,18 +38,20 @@ Originally based on **kickstart.nvim**, but the kickstart plugin set has been fu
 - `nvim/init.lua` — core options, base keymaps, autocmds (treesitter folding, yank highlight), lazy.nvim bootstrap. Lazy setup loads only `tpope/vim-sleuth` and `{ import = "custom.plugins" }`.
 - `nvim/lua/custom/plugins/` — one file per plugin/feature, each returning a lazy.nvim spec. Every file here is auto-imported, so adding a plugin = adding a file.
 - `nvim/lua/custom/plugins/colorschemes/` — subdirectory, imported via its `init.lua` (lazy.nvim's `import` loads the directory module).
-- `nvim/after/ftplugin/` — filetype overrides: `java.lua` (custom fold expression folding imports + indent), `markdown.lua` / `text.lua` (wrap, linebreak, `j`/`k` → `gj`/`gk`).
+- `nvim/lua/custom/cucumber.lua` — plain module (not a plugin spec) that runs/debugs Cucumber scenarios via Maven (`-Dsurefire.includeJUnit5Engines=cucumber -Dcucumber.features=<file>:<line>`) in a terminal split; debug uses `-Dmaven.surefire.debug` and attaches nvim-dap on port 5005.
+- `nvim/after/ftplugin/` — filetype overrides: `java.lua` (custom fold expression folding imports + indent, nvim-java test keymaps under `<leader>T`), `cucumber.lua` (`<leader>T*` keymaps for `.feature` files), `markdown.lua` / `text.lua` (wrap, linebreak, `j`/`k` → `gj`/`gk`).
 
 **Key settings:** Leader `<Space>`, `conceallevel=2`, clipboard `unnamedplus`, relative numbers, all folds open by default (`foldlevel=99`). Folding uses treesitter `foldexpr` when a parser exists, otherwise `indent`; Java is skipped there because its ftplugin sets its own fold expression.
 
 **Plugins** (`lua/custom/plugins/`):
-- `lsp.lua` — nvim-lspconfig + Mason, mason-lspconfig, mason-tool-installer, fidget. Servers: `ts_ls`, `jdtls`, `html`, `cssls`, `dockerls`, `jsonls`, `yamlls`, `lua_ls`. `jdtls` goes through `nvim-java` and references a hard-coded formatter XML path on a work machine (`/Users/k37597/...`). LSP keymaps (`gd`, `gr`, `gI`, `<leader>rn`, `<leader>ca`, …) are set in an `LspAttach` autocmd and use Telescope pickers.
+- `lsp.lua` — nvim-lspconfig + Mason, mason-lspconfig, mason-tool-installer, fidget. Servers: `ts_ls`, `jdtls`, `html`, `cssls`, `dockerls`, `jsonls`, `yamlls`, `cucumber_language_server`, `lua_ls`. `jdtls` goes through `nvim-java` and references a hard-coded formatter XML path on a work machine (`/Users/k37597/...`). LSP keymaps (`gd`, `gr`, `gI`, `<leader>rn`, `<leader>ca`, …) are set in an `LspAttach` autocmd and use Telescope pickers.
 - `autocompletion.lua` — nvim-cmp + LuaSnip (sources: lazydev, nvim_lsp, luasnip, path)
 - `conform.lua` — format on save; stylua (lua), jq (json), prettierd/prettier (html, js). `<leader>fb` formats manually.
 - `telescope.lua` — fuzzy finder, `<leader>s*` keymaps, vertical layout
 - `treesitter.lua` — parsers, highlighting, incremental selection, and the textobject definitions (`treesitter-textobjects.lua` only declares the plugin)
 - `mini.lua` — mini.ai, mini.surround, mini.statusline
 - Git: `gitsigns.lua`, `fugitive.lua`, `neogit.lua` (`<leader>gg`)
+- `dap.lua` — nvim-dap + dap-ui + virtual text; F5 continue, F1/F2/F3 step into/over/out, F7 UI, `<leader>b` breakpoint. The Java adapter comes from nvim-java once jdtls is running.
 - `harpoon.lua` — harpoon2; `<leader>a` add, `<leader>l` menu, `<C-j>`/`<C-k>` prev/next. **Note:** these override the `<C-j>`/`<C-k>` window-navigation maps from `init.lua`.
 - `nvim-tree.lua` — file explorer (`<leader>n`)
 - `which-key.lua` — keymap discovery; documents leader groups
