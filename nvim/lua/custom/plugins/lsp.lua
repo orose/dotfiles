@@ -62,12 +62,24 @@ return {
 
 		local servers = {
 			ts_ls = {},
-			jdtls = {},
+			jdtls = {
+				settings = {
+					java = {
+						format = {
+							settings = {
+								url = "/Users/k37597/dev/aurora-ide-konfigurasjon/intellij/Aurora_CodeStyle.xml",
+								profile = "Skatteetaten",
+							},
+						},
+					},
+				},
+			},
 			html = { filetypes = { "html" } },
 			cssls = {},
 			dockerls = {},
 			jsonls = {},
 			yamlls = {},
+			cucumber_language_server = {},
 			lua_ls = {
 				settings = {
 					Lua = {
@@ -84,30 +96,18 @@ return {
 		vim.list_extend(ensure_installed, { "stylua" })
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
-		require("mason-lspconfig").setup({
-			handlers = {
-				function(server_name)
-					local server = servers[server_name] or {}
-					server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-					require("lspconfig")[server_name].setup(server)
-				end,
-				jdtls = function()
-					require("java").setup({})
-					require("lspconfig").jdtls.setup({
-						settings = {
-							java = {
-								format = {
-									settings = {
-										url = "/Users/k37597/dev/aurora-ide-konfigurasjon/intellij/Aurora_CodeStyle.xml",
-										profile = "Skatteetaten",
-									},
-								},
-							},
-						},
-					})
-				end,
-			},
-		})
+		-- nvim-java må settes opp før jdtls aktiveres: den registrerer jdtls-config
+		-- med java-debug/java-test-bundles og setter opp DAP-adapteren ved attach.
+		require("java").setup({})
+
+		-- mason-lspconfig v2 har ikke lenger `handlers`; servere konfigureres med
+		-- vim.lsp.config og aktiveres automatisk (automatic_enable).
+		for server_name, server in pairs(servers) do
+			server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+			vim.lsp.config(server_name, server)
+		end
+
+		require("mason-lspconfig").setup()
 	end,
 }
 
