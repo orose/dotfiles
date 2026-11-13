@@ -144,3 +144,25 @@ cyan    = "#005e8b"   # modus-cyan       → docker
 magenta = "#721045"   # modus-magenta    → tid
 white   = "#ffffff"
 black   = "#000000"
+
+[palettes.gruvbox_material_light]
+red     = "#c14a4a"   # gruvbox-material red    → OS/bruker
+orange  = "#c35e0a"   # gruvbox-material orange → katalog
+yellow  = "#b47109"   # gruvbox-material yellow → git
+green   = "#6c782e"   # gruvbox-material green  → språk/runtime
+blue    = "#45707a"   # gruvbox-material blue   → conda
+cyan    = "#4c7a5d"   # gruvbox-material aqua   → docker
+magenta = "#945e80"   # gruvbox-material purple → tid
+white   = "#fbf1c7"   # tekst i pillene (bg0)
+black   = "#654735"
+
+[palettes.gruvbox_material_dark]
+red     = "#ea6962"   # gruvbox-material red    → OS/bruker
+orange  = "#e78a4e"   # gruvbox-material orange → katalog
+yellow  = "#d8a657"   # gruvbox-material yellow → git
+green   = "#a9b665"   # gruvbox-material green  → språk/runtime
+blue    = "#7daea3"   # gruvbox-material blue   → conda
+cyan    = "#89b482"   # gruvbox-material aqua   → docker
+magenta = "#d3869b"   # gruvbox-material purple → tid
+white   = "#282828"   # tekst i pillene: mørk (bg0), siden aksentene er lyse
+black   = "#d4be98"
