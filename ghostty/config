@@ -1,4 +1,4 @@
-theme = dark:Modus Vivendi Tinted,light:Modus Operandi Tinted
+theme = dark:Gruvbox Material Dark,light:Gruvbox Material Light
 font-family = "FiraCode Nerd Font Mono"
 
 macos-titlebar-style = tabs

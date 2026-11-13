@@ -119,7 +119,7 @@ Test keymaps live under `<leader>T` and are buffer-local:
 ## Themes
 
 Supported colorschemes: **Gruvbox Material**, **Modus**, **Catppuccin**, **Rose Pine** and **Solarized**.
-Neovim uses Gruvbox Material. Ghostty, the starship palette and the tmux example above use Modus.
+Neovim, Ghostty and starship use Gruvbox Material; the tmux example above uses Modus.
 
 - **Neovim:** set `ACTIVE_THEME` in `nvim/lua/custom/plugins/colorschemes/init.lua`.
   Themes with both dark and light variants follow the macOS appearance automatically.

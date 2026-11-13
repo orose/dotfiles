@@ -11,7 +11,7 @@ Personal dotfiles for a terminal-first development environment on macOS. Compone
 - **Git** (`git/gitconfig`, `git/gitignore_global`) — git config with extensive aliases
 - **Shell** (`bash_profile`, `bash_aliases`, `bash_prompt`, `starship.toml`) — bash + starship prompt
 - **IdeaVim** (`ideavimrc`) — Vim keybindings for IntelliJ products
-- **Ghostty** (`ghostty/config`) — terminal config: Modus Tinted theme following the macOS appearance, FiraCode Nerd Font, background opacity/blur (`cmd+shift+o` toggles opacity)
+- **Ghostty** (`ghostty/config`) — terminal config: Gruvbox Material theme following the macOS appearance, FiraCode Nerd Font, background opacity/blur (`cmd+shift+o` toggles opacity)
 - **Claude Code** (`claude/`) — user-level settings, statusline script, coding guidelines (`java.md`, `frontend.md`) and skills
 
 There is no Kitty config in this repo; the terminal is Ghostty.
@@ -68,7 +68,7 @@ Originally based on **kickstart.nvim**, but the kickstart plugin set has been fu
 
 ## Theming
 
-Five colorschemes: **Gruvbox Material**, **Modus**, **Catppuccin**, **Rose Pine** and **Solarized**. Neovim's `ACTIVE_THEME` is `gruvbox-material`; Ghostty and the starship palette still use Modus.
+Five colorschemes: **Gruvbox Material**, **Modus**, **Catppuccin**, **Rose Pine** and **Solarized**. Neovim (`ACTIVE_THEME`), Ghostty and starship use Gruvbox Material.
 
 **Neovim:** `colorschemes/init.lua` sets `ACTIVE_THEME` (matched against each spec's `name`). Each theme file returns a lazy spec with extra fields `dark_colorscheme` / `light_colorscheme` (or a single `colorscheme`). The loader gives the active theme `priority = 1000`, wraps its `config` and, when both dark/light are set, adds `f-person/auto-dark-mode.nvim` to follow the macOS appearance. To switch theme, change `ACTIVE_THEME`.
 
@@ -78,7 +78,7 @@ Five colorschemes: **Gruvbox Material**, **Modus**, **Catppuccin**, **Rose Pine*
 
 `tmux.conf` only references `@cfg_*`. A new theme file must define all `@cfg_*` variables.
 
-**Starship:** `starship.toml` has a pill-style prompt with a `palette` setting (currently `modus_operandi`) and palette definitions at the bottom of the file.
+**Starship:** `starship.toml` has a pill-style prompt with a `palette` setting (currently `gruvbox_material_light`) and palette definitions at the bottom of the file.
 
 ## Tmux
 
