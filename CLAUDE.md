@@ -11,7 +11,7 @@ Personal dotfiles for a terminal-first development environment on macOS. Compone
 - **Git** (`git/gitconfig`, `git/gitignore_global`) — git config with extensive aliases
 - **Shell** (`bash_profile`, `bash_aliases`, `bash_prompt`, `starship.toml`) — bash + starship prompt
 - **IdeaVim** (`ideavimrc`) — Vim keybindings for IntelliJ products
-- **Ghostty** (`ghostty/config`) — terminal config: Gruvbox Material theme following the macOS appearance, FiraCode Nerd Font, background opacity/blur (`cmd+shift+o` toggles opacity)
+- **Ghostty** (`ghostty/config`) — terminal config: Gruvbox Material theme following the macOS appearance, FiraCode Nerd Font, background opacity/blur (`cmd+shift+o` toggles opacity), non-native fullscreen (no title/tab bar)
 - **Claude Code** (`claude/`) — user-level settings, statusline script, coding guidelines (`java.md`, `frontend.md`) and skills
 
 There is no Kitty config in this repo; the terminal is Ghostty.
