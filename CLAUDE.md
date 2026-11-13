@@ -68,7 +68,7 @@ Originally based on **kickstart.nvim**, but the kickstart plugin set has been fu
 
 ## Theming
 
-Five colorschemes: **Modus** (current default), **Catppuccin**, **Rose Pine**, **Solarized** and **Gruvbox Material**.
+Five colorschemes: **Gruvbox Material**, **Modus**, **Catppuccin**, **Rose Pine** and **Solarized**. Neovim's `ACTIVE_THEME` is `gruvbox-material`; Ghostty and the starship palette still use Modus.
 
 **Neovim:** `colorschemes/init.lua` sets `ACTIVE_THEME` (matched against each spec's `name`). Each theme file returns a lazy spec with extra fields `dark_colorscheme` / `light_colorscheme` (or a single `colorscheme`). The loader gives the active theme `priority = 1000`, wraps its `config` and, when both dark/light are set, adds `f-person/auto-dark-mode.nvim` to follow the macOS appearance. To switch theme, change `ACTIVE_THEME`.
 
