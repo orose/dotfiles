@@ -60,7 +60,7 @@ Originally based on **kickstart.nvim**, but the kickstart plugin set has been fu
 
 ## Theming
 
-Four colorschemes: **Modus** (current default), **Catppuccin**, **Rose Pine** and **Solarized**.
+Five colorschemes: **Modus** (current default), **Catppuccin**, **Rose Pine**, **Solarized** and **Gruvbox Material**.
 
 **Neovim:** `colorschemes/init.lua` sets `ACTIVE_THEME` (matched against each spec's `name`). Each theme file returns a lazy spec with extra fields `dark_colorscheme` / `light_colorscheme` (or a single `colorscheme`). The loader gives the active theme `priority = 1000`, wraps its `config` and, when both dark/light are set, adds `f-person/auto-dark-mode.nvim` to follow the macOS appearance. To switch theme, change `ACTIVE_THEME`.
 

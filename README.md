@@ -83,7 +83,7 @@ Leader is `<Space>`. Press it and wait for which-key to list available keymaps.
 
 ## Themes
 
-Supported colorschemes: **Modus** (default), **Catppuccin**, **Rose Pine** and **Solarized**.
+Supported colorschemes: **Modus** (default), **Catppuccin**, **Rose Pine**, **Solarized** and **Gruvbox Material**.
 
 - **Neovim:** set `ACTIVE_THEME` in `nvim/lua/custom/plugins/colorschemes/init.lua`.
   Themes with both dark and light variants follow the macOS appearance automatically.

@@ -5,6 +5,7 @@ local themes = {
 	require("custom.plugins.colorschemes.catppuccin"),
 	require("custom.plugins.colorschemes.modus"),
 	require("custom.plugins.colorschemes.solarized"),
+	require("custom.plugins.colorschemes.gruvbox-material"),
 }
 
 for _, theme in ipairs(themes) do
