@@ -11,9 +11,10 @@ Personal dotfiles for a terminal-first development environment on macOS. Compone
 - **Git** (`git/gitconfig`, `git/gitignore_global`) — git config with extensive aliases
 - **Shell** (`bash_profile`, `bash_aliases`, `bash_prompt`, `starship.toml`) — bash + starship prompt
 - **IdeaVim** (`ideavimrc`) — Vim keybindings for IntelliJ products
+- **Ghostty** (`ghostty/config`) — terminal config: Modus Tinted theme following the macOS appearance, FiraCode Nerd Font, background opacity/blur (`cmd+shift+o` toggles opacity)
 - **Claude Code** (`claude/`) — user-level settings, statusline script, coding guidelines (`java.md`, `frontend.md`) and skills
 
-There is no Kitty config in this repo.
+There is no Kitty config in this repo; the terminal is Ghostty.
 
 ## Setup
 
@@ -36,14 +37,21 @@ nvim --headless "+Lazy! sync" +qa
 Originally based on **kickstart.nvim**, but the kickstart plugin set has been fully split out — there is no `lua/kickstart/` directory anymore.
 
 - `nvim/init.lua` — core options, base keymaps, autocmds (treesitter folding, yank highlight), lazy.nvim bootstrap. Lazy setup loads only `tpope/vim-sleuth` and `{ import = "custom.plugins" }`.
-- `nvim/lua/custom/plugins/` — one file per plugin/feature, each returning a lazy.nvim spec. Every file here is auto-imported, so adding a plugin = adding a file.
+- `nvim/lua/custom/plugins/` — one file per plugin/feature, each returning a lazy.nvim spec. Every file here is auto-imported, so adding a plugin = adding a file. `init.lua` there is an empty spec (`return {}`).
 - `nvim/lua/custom/plugins/colorschemes/` — subdirectory, imported via its `init.lua` (lazy.nvim's `import` loads the directory module).
-- `nvim/after/ftplugin/` — filetype overrides: `java.lua` (custom fold expression folding imports + indent), `markdown.lua` / `text.lua` (wrap, linebreak, `j`/`k` → `gj`/`gk`).
+- `nvim/lua/custom/` — non-plugin helper modules required from plugin specs and ftplugins:
+  - `cucumber.lua` — runs/debugs Cucumber scenarios from a `.feature` buffer via Maven (`mvnw` if present) using the JUnit Platform cucumber engine (`-Dcucumber.features=<file>:<line>`). Output goes to a terminal split at the bottom. Debug starts Maven with `-Dmaven.surefire.debug` (JDWP on port 5005, `suspend=y`) and attaches nvim-dap when the JVM prints "Listening for transport dt_socket". Options in `M.config` (`glue`, `plugin`, `debug_port`, `extra_args`). `scenario_line` resolves the scenario (or Examples row) under the cursor, with English and Norwegian Gherkin keywords.
+  - `java_test.lua` — DAP listeners for nvim-java test sessions (config name `"Launch All Java Tests"`): notifies on start, opens dap-ui on first output, and after `terminated` summarizes passed/failed/skipped from `java-test`'s last report (opens the report on failures).
+- `nvim/after/ftplugin/` — filetype overrides:
+  - `java.lua` — custom fold expression (folds imports + indent) and buffer-local test maps under `<leader>T` via nvim-java (`Tc`/`Tm` run class/method, `TC`/`TM` debug class/method, `Tr` last report, `Tl` re-run last Cucumber run)
+  - `cucumber.lua` — buffer-local maps for `custom.cucumber` (`Ts` scenario, `Tf` file, `Tl` re-run last, `Td`/`TD` debug scenario/file)
+  - `markdown.lua` / `text.lua` — wrap, linebreak, `j`/`k` → `gj`/`gk`
 
 **Key settings:** Leader `<Space>`, `conceallevel=2`, clipboard `unnamedplus`, relative numbers, all folds open by default (`foldlevel=99`). Folding uses treesitter `foldexpr` when a parser exists, otherwise `indent`; Java is skipped there because its ftplugin sets its own fold expression.
 
 **Plugins** (`lua/custom/plugins/`):
-- `lsp.lua` — nvim-lspconfig + Mason, mason-lspconfig, mason-tool-installer, fidget. Servers: `ts_ls`, `jdtls`, `html`, `cssls`, `dockerls`, `jsonls`, `yamlls`, `lua_ls`. `jdtls` goes through `nvim-java` and references a hard-coded formatter XML path on a work machine (`/Users/k37597/...`). LSP keymaps (`gd`, `gr`, `gI`, `<leader>rn`, `<leader>ca`, …) are set in an `LspAttach` autocmd and use Telescope pickers.
+- `lsp.lua` — nvim-lspconfig + Mason, mason-lspconfig (v2), mason-tool-installer, fidget, nvim-java. Servers: `ts_ls`, `jdtls`, `html`, `cssls`, `dockerls`, `jsonls`, `yamlls`, `cucumber_language_server`, `lua_ls` (all plus `stylua` are in mason-tool-installer's `ensure_installed`). Uses the native `vim.lsp.config(name, opts)` API per server, then `mason-lspconfig.setup()` enables installed servers automatically (`automatic_enable`) — there are no `handlers`. `require("java").setup()` must run before jdtls is enabled: nvim-java registers the jdtls config with the java-debug/java-test bundles and sets up the DAP adapter on attach. The `jdtls` settings reference a hard-coded formatter XML path on a work machine (`/Users/k37597/...`, profile `Skatteetaten`). LSP keymaps (`gd`, `gr`, `gI`, `gD`, `<leader>D`, `<leader>ds`, `<leader>ws`, `<leader>rn`, `<leader>ca`, `<leader>th` inlay hints) are set in an `LspAttach` autocmd and use Telescope pickers.
+- `dap.lua` — nvim-dap + nvim-dap-ui (+ nvim-nio) + nvim-dap-virtual-text, lazy-loaded on its keys: `<F5>` continue, `<S-F5>` terminate, `<F1>`/`<F2>`/`<F3>` step into/over/out, `<F7>` toggle UI, `<leader>b` / `<leader>B` (conditional) breakpoint. dap-ui opens on `initialized` but is not closed automatically, so test output stays visible. The Java adapter comes from nvim-java, not from this file; `config` calls `require("custom.java_test").setup()`.
 - `autocompletion.lua` — nvim-cmp + LuaSnip (sources: lazydev, nvim_lsp, luasnip, path)
 - `conform.lua` — format on save; stylua (lua), jq (json), prettierd/prettier (html, js). `<leader>fb` formats manually.
 - `telescope.lua` — fuzzy finder, `<leader>s*` keymaps, vertical layout
@@ -52,7 +60,7 @@ Originally based on **kickstart.nvim**, but the kickstart plugin set has been fu
 - Git: `gitsigns.lua`, `fugitive.lua`, `neogit.lua` (`<leader>gg`)
 - `harpoon.lua` — harpoon2; `<leader>a` add, `<leader>l` menu, `<C-j>`/`<C-k>` prev/next. **Note:** these override the `<C-j>`/`<C-k>` window-navigation maps from `init.lua`.
 - `nvim-tree.lua` — file explorer (`<leader>n`)
-- `which-key.lua` — keymap discovery; documents leader groups
+- `which-key.lua` — keymap discovery; documents leader groups (incl. `<leader>T` [T]est; `<leader>t` is [T]oggle)
 - `render-markdown.lua` — in-editor markdown rendering
 - `journal.lua` — `orose/journal.nvim` (the user's own plugin)
 - `vimdeck.lua` — presentations inside Neovim
@@ -78,7 +86,7 @@ Prefix is `Ctrl-a`. Vi copy mode, mouse on, status bar at the top (with an empty
 
 ## Claude Code config (`claude/`)
 
-- `settings.json` — user settings (statusline, language Norsk, permissions)
+- `settings.json` — user settings (statusline command, language Norsk)
 - `statusline-command.sh` — statusline showing model, dir, git branch/changes, context bar, cost converted to NOK and duration (needs `jq` and `bc`)
 - `java.md`, `frontend.md` — personal coding guidelines for Java/Spring Boot and React/TypeScript projects
-- `skills/` — custom skills; `skills/synced/` (untracked, has a `manifest.json`) appears to be synced automatically and should not be edited by hand
+- `skills/` — custom skills: `grill-me`, `improve-codebase-architecture`, `tdd`, `to-issues`, `to-prd`. A `skills/synced/` directory (untracked, with a `manifest.json`) may appear locally; it is synced automatically and should not be edited by hand
